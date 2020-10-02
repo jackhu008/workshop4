@@ -41,7 +41,7 @@ oc new-project pipelines-{{USER_ID}}
 
 TIP: In the simplest format a task can be executed by a taskrun object. The diagram below shows a simple taskrun calling a single task
 
-image::pipelines-1.png[Simple pipeline with a task and taskrun]
+image::images/pipelines-1.png[Simple pipeline with a task and taskrun]
 
 .Tekton command line
 ****
