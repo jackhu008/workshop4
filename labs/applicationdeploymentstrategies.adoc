@@ -44,7 +44,7 @@ It is important to understand the resources and content that are created by the 
 
 The diagram below shows the above and how they relate together.
 
-image::deployment-strategies-1.png[Deployment artefacts]
+image::images/deployment-strategies-1.png[Deployment artefacts]
 ****
 
 To identify the URL of the route execute the command shown below:
@@ -94,7 +94,7 @@ New content was added to the project as a result of the above command specific t
 
 The diagram below shows the above and how they relate together.
 
-image::deployment-strategies-2.png[Deployment artefacts]
+image::images/deployment-strategies-2.png[Deployment artefacts]
 ****
 
 At this point the version 2 application is operational but not accessible externally to the cluster.
@@ -182,7 +182,7 @@ TIP: The benefit of an A/B deployment strategy is that it is possible to gradual
 
 Gradually migrating traffic from v1 to v2 involves patching the route to change configuration as shown below.
 
-image::deployment-strategies-3.png[Traffic routing]
+image::images/deployment-strategies-3.png[Traffic routing]
 
 To migrate 30% of traffic to version 2 execute the following command:
 
@@ -239,7 +239,7 @@ oc set route-backends simple-rest-app-route simple-rest-app-v1-0=0 simple-rest-a
 
 Many organizations want to use a common URL for their web sites so that it is easy for users. This is often achieved by pointing a specific URL at an OpenShift cluster route within a global load balancer function, however this is not essential and it is possible to use routes to achieve the same result. Take as an example a holiday company called myholiday.com. The company wishes to sell package holidays, short breaks, cruises and adventure holidays and they create different applications for these purposes. By using a common host name in a series of route it is possible to ensure that traffic flows to the right location, based on the path of the url used. The diagram below shows the descried scenario and how the routes, services and applications work together
 
-image::deployment-strategies-4.png[URL based routing]
+image::images/deployment-strategies-4.png[URL based routing]
 
 In this example you will create an application that mirrors that shown above and you will use a single URL for access to the four different elements of the application.
 

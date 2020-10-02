@@ -30,13 +30,13 @@ Wait for the ring around the application icon to change to dark blue - this indi
 
 In the topology page click on the 'Open URL' icon as shown below
 
-image::prereq-1.png[Selecting the Open URL]
+image::images/prereq-1.png[Selecting the Open URL]
 
 This will open another tab with a command line in it - this is your terminal for the duration of the basic workshop
 
 Switch back to the UI and click on the {{USER_ID}} displayed at the top right and select 'Copy Login Command' as shown below
 
-image::prereq-2.png[Selecting Copy Login]
+image::images/prereq-2.png[Selecting Copy Login]
 
 In the new tab that appears login with username {{USER_ID}} and password 'openshift'
 

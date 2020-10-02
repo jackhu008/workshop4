@@ -35,7 +35,7 @@ Click on 'Create Project'. Set the name to events-{{USER_ID}}. Set the Display N
 
 Once the Project has created you should be taken to the Project Details tab. Select Home/Events in the left hand menu. The resulting screen should look similar to this:
 
-image::events1.png[Events tab empty]
+image::images/events1.png[Events tab empty]
 
 Now we will add an application to the project. Switch to the Developer view by clicking on Administrator and selecting Developer.
 
@@ -59,7 +59,7 @@ Click Create. Leave the application building and switch back to Adminstrator vie
 
 Click on Home/Events. You will see a screen similar to this:
 
-image::events3.png[build happening]
+image::images/events3.png[build happening]
 
 Click on the pause icon at the top of the Events list.
 
@@ -69,13 +69,13 @@ Note that the events show the build container being pulled, created, deployed an
 
 Now in the pulldown box at the top left of the events set the resource to Build (build.openshift.io/v1). This will filter the events to only ones from that type of resource. The screen should now look like:
 
-image::events4.png[build events only]
+image::images/events4.png[build events only]
 
 Now click in the pulldown box at the top left of the events. In the textbox where it says 'Select Resource' type 'pod'. From the selection in the pulldown choose 'Pod'. Remove the 'Build' filter 
 
 Pause the event stream again. It should look like this:
 
-image::events4b.png[pod events paused]
+image::images/events4b.png[pod events paused]
 
 Switch to your terminal app window (the command line interface described in the prerequisites). type the following:
 
@@ -86,7 +86,7 @@ oc get dc
 oc scale dc/nodeatomic --replicas=6
 ----
 
-image::events5.png[manually scale]
+image::images/events5.png[manually scale]
 
 Switch back to the OpenShift UI. You should still be on the Events tab with the events stream paused. Hit the play icon at the top left of the event stream list. You will notice new events relating to the creation of the new Pods.
 
@@ -119,11 +119,11 @@ Set the filter at the top left of the page to 'Running'
 
 Select the topmost Pod and click on its name. The Pod Details tab will display the current metrics for the Pod. 
 
-image::events6.png[Example Pod metrics]
+image::images/events6.png[Example Pod metrics]
 
 Now click on Home/Projects. Click on the events-{{USER_ID}} project. Scroll down to the 'Utilization' tab. This shows graphs for the agregated metrics for *all* Pods running in the Project, along with network transfer in/out for the Project and Pod count.
 
-image::events7.png[Aggregated Pod metrics]
+image::images/events7.png[Aggregated Pod metrics]
 
 As of writing the following examples are in tech preview. On the Utilization tab click directly on the Pod Count graph itself. This will take you to an expanded graph which is a realtime version of the metrics executed by a query. The query is displayed beneath the graph. If you watch the graph it will update periodically.
 
@@ -136,7 +136,7 @@ oc scale dc/nodeatomic --replicas=1
 
 Switch back to OpenShift UI. After a small pause (the metrics are collected over time) the graph should drop to reflect the change in Pod count. 
 
-image::events8.png[pods scaled back]
+image::images/events8.png[pods scaled back]
 
 This Metric functionality is incrdibly powerful and is being further developed for later releases.
 

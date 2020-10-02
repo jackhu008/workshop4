@@ -140,7 +140,7 @@ tkn pipeline start pipeline-1
 
 Once you have executed the command switch back to the OpenShift console. If you select the Developer view you will find there is a menu option on the left hand side labelled 'Pipelines'. Select this option and the screen should look like this:
 
-image::pipelines-2.png[Example Pipelines UI]
+image::images/pipelines-2.png[Example Pipelines UI]
 
 Once the pipeline is indicated to have finished by showing 'Succeeded' in the 'Last Run Status' column, go back to the terminal and enter the command suggested by the response to the tkn command - it will look similar to this:
 
@@ -242,11 +242,11 @@ As soon as you enter the last command switch back to the console and watch the p
 
 In the OpenShift console you will see the pipeline recently created and it will show a green bar to the right indicating the previous successful execution of the pipeline, as shown below. Note that the green bar will display dark blue sections for running tasks, light blue sections for pending tasks, green for completed and red for failed.
 
-image::pipelines-3.png[Pipeline view showing a completed pipeline run]
+image::images/pipelines-3.png[Pipeline view showing a completed pipeline run]
 
 From the three dot menu on the right hand side it is possible to start a run of the pipeline. Do this now and watch as the screen changes to show the details of the pipeline run as shown below:
 
-image::pipelines-4.png[Pipelinerun in progress]
+image::images/pipelines-4.png[Pipelinerun in progress]
 
 Each block can be clicked on to show the details of the steps within the task. Experiment with the different screens to look at the details of the running or completed tasks.
 
@@ -285,7 +285,7 @@ Further details on the options for all of the above resources is included here :
 
 The task defined in task-4.yaml uses both parameters and pipeline resources to get information into the task. This allows a generic task to be written with specific values supplied to it from the taskrun. The Taskrun object acts as a 'value provider' giving specific values for parameters and referencing specific pipeline resources. The following diagram shows the relationship between the three specific objects.
 
-image::pipelines-5.png[Task and resource relationship]
+image::images/pipelines-5.png[Task and resource relationship]
 
 As shown above the task has place-holders for two parameters. The first parameter has a value defined within the taskrun. The second parameter has a default value so it is not essential to provide a value for it in the taskrun. Both parameters are referenced from the steps of the task using the notation $(inputs.params.<parameter-name>).
 
@@ -397,11 +397,11 @@ tkn pipeline start pipeline-5
 
 Now switch to the OpenShift console. Select the Pipelines entry on the left side of the Developer panel.
 
-image::pipelines-6.png[Two completed pipelines]
+image::images/pipelines-6.png[Two completed pipelines]
 
 You can click on the pipeline-run (labelled pipeline-5-run-XXXXX) and examine the logs for each of the tasks. 
 
-image::pipelines-7.png[Task details]
+image::images/pipelines-7.png[Task details]
 
 To examine the pipeline run in the terminal window use the command :
 

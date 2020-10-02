@@ -36,7 +36,7 @@ Description - 'Liveness and readiness probes'
 
 as shown in the image below:
 
-image::healthprobes-1.png[Project creation]
+image::images/healthprobes-1.png[Project creation]
 
 *By default when you create a Project within OpenShift your user is given administration rights. This allows the user to create any objects that they have rights to create and to change the security and access settings for the project itself, i.e. add users as Administrators, Edit Access, Read access or disable other user's abilities to even see the project and the objects within.*
 
@@ -119,7 +119,7 @@ The colour scheme of the pods is important and conveys information about the pod
 
 When the build has completed the right hand side panel will shown something similar to the image below. Note that the route will be different to that which is shown below. 
 
-image::healthprobes-2.png[Deployment configuration resource information]
+image::images/healthprobes-2.png[Deployment configuration resource information]
 
 Click on the Tick at the bottom left of the Pod. Note that this display can also be shown by clicking on the ‘View Logs’ section on the right hand side panel.
 
@@ -217,7 +217,7 @@ Select the Topology view of the application.
 Click on the pod in the centre of the screen to display the information panel on the right hand side.
 From the action menu on the right hand side click *Edit Deployment Configuration* as shown in the image below.
 
-image::healthprobes-3.png[View of the health probe in the Deployment Configuration]
+image::images/healthprobes-3.png[View of the health probe in the Deployment Configuration]
 
 *On the Deployment Configuration page that is displayed ensure that the YAML tab is selected and scroll down to around line 200 to see the YAML definition for the liveness probe. It is also possible to edit the parameters of the probe from this screen if necessary.*
 
@@ -241,7 +241,7 @@ Change the url to have /ignore on the end and hit return. Quickly move to the br
 
 The pod will restart after 1 failed probe event which takes up to 10 seconds depending on where the schedule is between the probe cycles. The events for the pod on the details screen will be similar to that shown below.
 
-image::healthprobes-4.png[Pod events showing activation of the liveness probe]
+image::images/healthprobes-4.png[Pod events showing activation of the liveness probe]
 
 *The events after the firing of the liveness probe are the re-pulling and starting of the container image in a new pod.*
 
@@ -365,7 +365,7 @@ Change the url to have /ignore on the end and hit return. Quickly move to the br
 
 The pod events will show a screen similar to that which is shown below.
 
-image::healthprobes-5.png[Pod events showing activation of the readiness probe]
+image::images/healthprobes-5.png[Pod events showing activation of the readiness probe]
 
 *Note that you will see the count of the readiness 'events' incrementing every 5 seconds.*
 
@@ -393,7 +393,7 @@ The subset of the command output shown above indicates that the address is now l
 
 From OpenShift version 4.5 it is also possible to see the pod events from the fly-out right click menu. To view this select the topology view in the web browser interface and click on the pod. On the dialog on the right hand side select the monitoring tab and open the events (warnings) tab as shown below.
 
-image::healthprobes-6.png[Pod events showing activation of the readiness probe]
+image::images/healthprobes-6.png[Pod events showing activation of the readiness probe]
 
 *To simulate this the Node application has a REST endpoint at /restore. Since the pod is currently not receiving communications from outside the cluster the call to the restore endpoint is done from within the pod command window.*
 

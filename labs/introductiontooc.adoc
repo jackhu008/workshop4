@@ -30,7 +30,7 @@ oc whoami
 oc version
 ----
 
-image::ocintro1.png[Correct response from oc]
+image::images/ocintro1.png[Correct response from oc]
 
 The oc client works using something called a 'context'. This is a valid login to a target OpenShift system. If the commands do not return the successful output (see above for a similar output) then please repeat the login steps listed in the pre-requisites.
 
@@ -41,7 +41,7 @@ What we are going to do is create a Project to work in. This is equivalent, but 
 oc new-project octest-{{USER_ID}}
 ----
 
-image::ocintro2.png[Correct response from oc new-project]
+image::images/ocintro2.png[Correct response from oc new-project]
 
 What we have done is create a context within our user's object space on the OpenShift Cluster. As creators we have admin access and rights to this space - we can create and delete objects, that we have the rights to create, as much as we like here.
 
@@ -53,7 +53,7 @@ oc projects
 oc get projects
 ----
 
-image::ocintro3.png[Correct response from projects commands]
+image::images/ocintro3.png[Correct response from projects commands]
 
 The 'oc projects' is an opinionated command - because we work with Projects so much there is a shortcut for them. The second command is the standard way of getting any object that you have the rights to via the oc command.
 
@@ -78,7 +78,7 @@ This command will show an explanation of that API object type, namely 'Pods'. No
 oc explain pods --recursive
 ----
 
-image::ocintro4.png[Full definition of Pod]
+image::images/ocintro4.png[Full definition of Pod]
 
 Every object can be described using JSON or YAML - this command returns, from the Server, the exact definition of that object. This is incredibly useful when we get to editing the objects via oc.
 
@@ -115,7 +115,7 @@ Now type the follow, as suggested by the output:
 oc status
 ----
 
-image::ocintro6.png[oc status output]
+image::images/ocintro6.png[oc status output]
 
 The system is performing a build, defined by the buildconfig that has been created using the chosen technology deduced by OpenShift from the repo. When the build finishes it will deploy the application - the deployment is shown as the 'dc', which is the deployment config object. This is waiting on the image to be created by the build. It also creates a Service, which is the internal endpoint for the application.
 
@@ -128,7 +128,7 @@ oc get pods
 
 Once deployed the output should look like this:
 
-image::ocintro7.png[working pods]
+image::images/ocintro7.png[working pods]
 
 You will notice there are three Pods - two have completed and one is running. This is because those actions of building an Application into an Image and then deploying the Application are executed as Pods themselves.
 
@@ -141,7 +141,7 @@ oc new-app https://github.com/utherp0/nodenews --as-deployment-config
 
 Again use the 'oc get pods' and 'oc status' to watch the build of the second application. When it completes it will look like this:
 
-image::ocintro8.png[working pods for app2]
+image::images/ocintro8.png[working pods for app2]
 
 === Using oc to manipulate existing objects
 
@@ -167,7 +167,7 @@ Once the commands come back successfully type:
 oc get pods | grep Running
 ----
 
-image::ocintro9.png[all the pods for the two apps]
+image::images/ocintro9.png[all the pods for the two apps]
 
 We are now going to look at the composition of a single 'object', in this case a pod. Using the output of the command above, pick one of the three Running meow2 Pods. You will need the name, which will be meow2-1-xxxxx, where xxxxx are random characters. Using the five characters from your chosen Pod type the following:
 
@@ -213,7 +213,7 @@ echo "  "$(oc get pod $pod -o jsonpath='{.status.phase}'); \
 done
 ----
 
-image::ocintro10.png[manual pod listing]
+image::images/ocintro10.png[manual pod listing]
 
 What we will do now is to scale down *all* of the applications to a single Pod using the oc command - this may seem a little pithy but imagine if you had operations to run over hundreds or thousands of objects. This approach makes it very easy to automate tasks. Type the following:
 

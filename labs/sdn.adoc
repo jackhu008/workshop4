@@ -64,7 +64,7 @@ Click 'Create'
 
 Wait until both applications have built and deployed. The Topology view will look similar to the image below:
 
-image::sdn-1.png[Both Applications Loaded]
+image::images/sdn-1.png[Both Applications Loaded]
 
 Once the applications have created change the mode from Developer to Administrator using the top left selection point
 
@@ -72,7 +72,7 @@ Click on 'Projects'. Select the networktest-{{USER_ID}} project
 
 Click on 'Networking/Services'
 
-image::sdn-2.png[Example Services]
+image::images/sdn-2.png[Example Services]
 
 TIP: The Services UI shows the services currently available in the Project. Note that there is a Service per application, so in this case there are two Services, application1 and application2. The Location is a singular IP address for each Service within the SDN - more on this later.
 
@@ -84,13 +84,13 @@ Using the arrows next to the Pod indicator scale the application to three replic
 
 Click on ‘Pods’ in the DC view (not Workloads/Pods)
 
-image::sdn-3.png[Pod Listing]
+image::images/sdn-3.png[Pod Listing]
 
 Click on the first active Pod for application1 listed
 
 Scroll down and take a note of the IP address for the Pod
 
-image::sdn-4.png[Highlighted Pod IP]
+image::images/sdn-4.png[Highlighted Pod IP]
 
 Click on 'Networking/Services'
 
@@ -104,7 +104,7 @@ Click on 'Workloads/Pods'
 
 Set the filter to 'Running' for ease of view
 
-image::sdn-4b.png[filtered pods]
+image::images/sdn-4b.png[filtered pods]
 
 Click on the first running Pod for application1 (the name will be application1-1-(something)
 
@@ -175,7 +175,7 @@ Click on 'Network/Network Policies'
 
 For each of the policies listed click on the triple dot icon on the far right and choose ‘Delete Network Policy’.
 
-image::sdn-5.png[Delete Network Policies]
+image::images/sdn-5.png[Delete Network Policies]
 
 The Network Policy tab should display ‘No Network Policies Found’.
 

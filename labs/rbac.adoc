@@ -24,7 +24,7 @@ Click on 'Create'
 
 Once the project has been created, click on 'User Management/Service Accounts'
 
-image::rbac-1.png[List of Service Accounts]
+image::images/rbac-1.png[List of Service Accounts]
 
 TIP: Service Accounts are effectively virtual users - even though you have logged on when you do anything within the namespace, such as a build or a deployment, the namespace uses a virtual user, with appropriate permissions, to do the actual tasks internally, like pushing a built image to the registry, or pulling an image to start a Container.
 
@@ -64,13 +64,13 @@ Switch back to Administrator view using the top left selection point
 
 Click on User Management/Role Bindings
 
-image::rbac-2.png[Admin Role]
+image::images/rbac-2.png[Admin Role]
 
 TIP: Note that we have a number of Role Bindings shown at the moment; we are interested in the 'Admin' RoleBindibg which is for Admin and applies to a kind of 'user' and a subject name of '{{USER_ID}}'. This is the binding of your user to the administration role within the project.
 
 Set the filter for the tab to show only the 'System Role Bindings'
 
-image::rbac-3.png[System Role Bindings]
+image::images/rbac-3.png[System Role Bindings]
 
 TIP: Note that with the filter for System Role Bindings we can now see the three Service Accounts also created. Deployer is part of the system:deployers binding, builder is part of the system:image-builders binding and the group of users under system:serviceaccounts:rbactest-{{USER_ID}} have the system:image-pullers binding.
 

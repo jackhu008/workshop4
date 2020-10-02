@@ -63,7 +63,7 @@ oc create -f layer1.yaml --save-config
 
 Switch to the web user interface and select the developer view for your service mesh project. Select the topology view and you will see the application start to be created. Click on the centre of the blue circle for the application and you should see the fly out menu on the right with details of the service and the running pod on the resources tab. Select the pod and scroll down the details of the pod until you see a section titled 'Containers'. This should show two containers as indicated below which are the 'layers' application container and the Istio sidecar container.
 
-image::service-mesh-01.png[Pod with application container and sidecar container]
+image::images/service-mesh-01.png[Pod with application container and sidecar container]
 
 Expose the service using a route by executing the following command :
 
@@ -89,7 +89,7 @@ This will list the following resources :
 
 The route, service and pod are shown in the diagram below to indicate the network communication to the application.
 
-image::service-mesh-02.png[Route, service and application]
+image::images/service-mesh-02.png[Route, service and application]
 
 Communication to the application will work as expected using the above resources. This can be tested by pasting the following command into the terminal window to make 100 calls to the application, approximately ever 0.2 seconds. 
 
@@ -103,7 +103,7 @@ for i in {1..100}; do curl $ROUTE; echo ""; sleep .2;done
 
 To enable the service mesh communication requires further resources to be created. The initial resources to be created are the gateway and the virtual service. The gateway resource identifies a host for which communication should be intercepted and directed to the istio-ingress gateway. The virtual service  acts as a communication director selecting traffic that matches specific criteria for routing to a destination service. The gateway and virtual service yaml content is shown in the diagram below which also shows schematically how the communication is directed.
 
-image::service-mesh-03.png[Istio gateway and virtual service]
+image::images/service-mesh-03.png[Istio gateway and virtual service]
 
 Create the gateway and the virtual service with the commands below:
 
@@ -148,7 +148,7 @@ Press the blue 'Log In With OpenShift' button to authenticate with your OpenShif
 
 On the left hand side of the Kiali screen select 'Graph and you should see a screen similar to that shown below :
 
-image::service-mesh-04.png[Kiali initial screen]
+image::images/service-mesh-04.png[Kiali initial screen]
 
 If your screen shows application nodes and services then Kiali is responding to the traffic that was sent in the 100 calls to the application a few minutes ago. Kiali will display a discovered configuration of applications and services if there has recently been traffic for it to observe.
 
@@ -165,7 +165,7 @@ for i in {1..100}; do curl $ROUTE; echo ""; sleep .2;done
 
 Switch back to the Kiali window and watch the animation of the traffic flow in the graph. It will take a few seconds for the animation to start, but eventually you will see a screen similar to that which is shown below. 
 
-image::service-mesh-05.png[Kiali traffic animation]
+image::images/service-mesh-05.png[Kiali traffic animation]
 
 Kiali has a number of sources of information which are selected from the left hand side menu. The animation display is shown on the graph view. If the for loop to send requests to the application has ended then restart it and you may want to change the number of calls to 1000 and change the sleep delay to 0.5 or 1.0 seconds to give more traffic while you explore the user interface.
 
@@ -179,7 +179,7 @@ The third drop down menu allows users to select which objects to display on the 
 
 On the left hand side of the Kiali screen there are options to display information about applications, workloads and services. These displays show useful information on the health of the resource. The Istio Config menu shows information about the istio resources (virtual services, gateways and many other Istio related resources). This is a useful source of information if something is wrong in the configuration of a resource as it will be highlighted clearly as shown below.
 
-image::service-mesh-06.png[Virtual service with error]
+image::images/service-mesh-06.png[Virtual service with error]
 
 === Phase 2 - Further content in the communication chain
 
@@ -230,7 +230,7 @@ Switch to the Kiali browser view and select the graph view. Wait until the traff
 
 The Kiali graph view (shown below) is currently displaying the communication into layer 1 and then from layer 1 to layer 2. Layer 2 has a virtual service which is governing the conditions under which layer 2 will get any network traffic such as protocol filtering, path filtering etc. In the absence of a destination rule to govern the flow of traffic a (roughly) 50% - 50% split of traffic is seen between version 1 and version 2 of layer 2. Select "Request percentage" in the second dropdown menu to see the distribution to version 1 and version 2 of layer2. Restart the for loop to send traffic in the terminal window if necessary.
 
-image::service-mesh-07.png[Kiali distribution of traffic to layer 2]
+image::images/service-mesh-07.png[Kiali distribution of traffic to layer 2]
 
 === Phase 3 - Further multi-versioned applications in the communication chain
 
@@ -248,7 +248,7 @@ You will see that four deployments are created for the four different versions o
 
 Switch to the OpenShift browser window and ensure that you are using the developer mode on the top left corner, you have the service-mesh-{{USER_ID}} project selected and you are viewing the Topology view. You should see the 'layers' application grouping now has seven micro-services within it. This is shown below:
 
-image::service-mesh-08.png[OpenShift topology view of micro-services]
+image::images/service-mesh-08.png[OpenShift topology view of micro-services]
 
 Under more common circumstances of a development project then names will often be cryptic and it will be hard to gain any understanding of the communication logic, sequence or hierarchy of an overall application. This is when the Kiali visualization view becomes extremely useful. 
 
@@ -396,7 +396,7 @@ Of the above 25 calls, 10 are for v1 (40%), 8 are for v2 (32%) and 7 are for v3 
 
 Switch to the Kiali browser view and wait until the traffic starts to appear. On the second to left drop down option menu at the top of the Kiali screen select the option "Requests percentage". This will show the breakdown of traffic similar to that which is shown below:
 
-image::service-mesh-09.png[OpenShift topology view of micro-services]
+image::images/service-mesh-09.png[OpenShift topology view of micro-services]
 
 === Phase 4 - Service timeout
 
@@ -581,7 +581,7 @@ Observe that traffic starts to be allowed through to that application only.
 
 Take a look at the traffic flow in the graph view of Kiali and you should see a display similar to that which is shown below (once Kiali has had the opportunity to catch up).
 
-image::service-mesh-10.png[Traffic distribution with errors]
+image::images/service-mesh-10.png[Traffic distribution with errors]
 
 The above image shows red to indicate the communication that is being rejected by the timeout. 
 

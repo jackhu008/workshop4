@@ -53,7 +53,7 @@ That's all there is to it! The `--env` options are just setting some environment
 
 Go to the Topology view in the Developer console. You should now see something like this:
 
-image::serverlessserving-1.png[A Knative service in the Topology view]
+image::images/serverlessserving-1.png[A Knative service in the Topology view]
 
 The outer box is the *Knative service*, and the circle inside of it is a *Revision* of the Knative service. We will learn more about revisions later on. In the very top right corner of the box, there is an icon labelled "Open URL" (when you hover over it). Click on this to open the application in a new tab.
 
@@ -91,7 +91,7 @@ kn revision list
 
 You can see that the traffic is now being split between the two revisions of the services. This is also reflected in the developer console (Topology view).
 
-image::serverlessserving-2.png[Green-blue deployment in the Topology view]
+image::images/serverlessserving-2.png[Green-blue deployment in the Topology view]
 
 Now let's take a look at our application again. Go to the Topology view and click on the "Open URL" icon in the top right of the rectangular box labelled "my-knative-app" (shown in the screenshot above).
 

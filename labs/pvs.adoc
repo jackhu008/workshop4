@@ -57,7 +57,7 @@ Click on ‘Create’
 
 When the Topology page appears click on the node Pod to see the information window
 
-image::pvs-1.png[Active Application]
+image::images/pvs-1.png[Active Application]
 
 Ensure the build completes correctly - watch the Developer/Topology page until the Pod is dark blue
 
@@ -82,7 +82,7 @@ df -h
 
 You will see a response similar to this:
 
-image::pvs-2.png[df with no pv]
+image::images/pvs-2.png[df with no pv]
 
 TIP: This command returns all the file mounts that the 'Operating System' has. In this case you will see an 'overlay' filesystem mounted on the root of the Container, at the '/' directory. This is the Container file system, created from the immutable image and now operating as effectively an OS
 
@@ -149,7 +149,7 @@ Now we will add a PVC to our application - at the 'Add Storage' tab you will see
 
 The screen should look like this:
 
-image::pvs-4.png[create new claim]
+image::images/pvs-4.png[create new claim]
 
 Most of the workshops use AWS so there should be a class called 'gp2'. Leave that selected.
 
@@ -186,7 +186,7 @@ The interface will shift to the Deployment Config Details and a deployment will 
 
 Whilst deploying the screen will look like:
 
-image::pvs-5.png[deployment]
+image::images/pvs-5.png[deployment]
 
 Once the deployment has finished and one Pod is displayed, click on the 'Pods' tab of the Deployment Config Details tab. There should be one pod and it should be called something like 'nodeatomic-2-zzzzz' (the '2' indicates the version of the deployment). Click on the Pod name.
 
@@ -225,7 +225,7 @@ Switch back to the Developer view (click on Administrator and choose Developer).
 
 This displays the overview of the Deployment Config. You will see a representation of the Application shown as a Pod with the number 1 in the middle. Next to the icon are two arrows - these are used to scale up and down the number of replicas. Click on the down arrow and set the replicas for the Application to zero.
 
-image::pvs-6.png[scaled down application]
+image::images/pvs-6.png[scaled down application]
 
 Click on the Resources tab and make sure there are no Pods running - the message will say 'No Pods found for this resource'.
 

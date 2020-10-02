@@ -13,7 +13,7 @@ TIP: This lab follows directly on from the Application Basics one so it is assum
 Ensure you are on the Administrator View (top level, select 'Administrator')
 Select 'Workloads/Deployment Configs'
 
-image::deployment-1.png[Deployment Configs]
+image::images/deployment-1.png[Deployment Configs]
 
 TIP: Observe the information provided on the Deployment Configs screen. DC indicates the Deployment Config by name, NS is the project/namespace, Labels are the OpenShift labels applied to the DC for collating and visualisation, status indicates the active Pod count for the Deployment and pod selector indicates the labels used for the Pods attributed to the Deployment Config.
 
@@ -21,7 +21,7 @@ Click on the 'nodenews' deployment-config
 
 Next to the Pod icon, with the count in it which should be set to two, click on the up arrow twice
 
-image::deployment-2.png[Scaling the Deployment]
+image::images/deployment-2.png[Scaling the Deployment]
 
 TIP: We have told the deployment config to run four replicas. The system now updated the replication controller, whose job is to make sure that x replicas are running healthily, and once the replication controller is updated the system will ensure that number of replicas is running
 
@@ -29,7 +29,7 @@ Click on ‘YAML’
 
 In the YAML find an entry for replicas. It should say 4. Set it to 2, then save.
 
-image::deployment-3.png[Editing the DC YAML]
+image::images/deployment-3.png[Editing the DC YAML]
 
 Click on ‘Deployment Configs’ near the top of the panel.
 
@@ -57,7 +57,7 @@ Make sure there is a space between the ':' and the data itself, otherwise it is 
 
 The YAML should look similar to the screenshot below, with your project name rather than sandbox-user99
 
-image::deployment-4.png[Example Config Map YAML]
+image::images/deployment-4.png[Example Config Map YAML]
 
 Press 'Create'
 
@@ -93,7 +93,7 @@ In the terminal type ‘env | grep nodenewsconfig’
 
 *Note that the env variables from the config map have been expressed within the Pod as env variables (with the nodenewsconfig prefixed)*
 
-image::deployment-5.png[Injected config map environment variables]
+image::images/deployment-5.png[Injected config map environment variables]
 
 Go back to the Terminal tab you created in the pre-requisites. We are going to use some material pre-loaded into the terminal image. Type the following commands in the Terminal tab.:
 
@@ -113,7 +113,7 @@ oc create -f testfile.yaml
 oc get configmaps
 ----
 
-image::deployment-6.png[terminal output]
+image::images/deployment-6.png[terminal output]
 
 Go back to the UI, select 'Workloads/Deployment Configs'
 
@@ -132,7 +132,7 @@ Find the setting for ‘imagePullPolicy’. Put the cursor to the end of the lin
             mountPath: /workshop/config
 ----
 
-image::deployment-7.png[code insert]
+image::images/deployment-7.png[code insert]
 
 Make sure the indentation is the same as for the ‘imagePullPolicy’.
 
@@ -149,7 +149,7 @@ Find ‘restartPolicy’. Put the cursor to the end of the line and press return
            defaultMode: 420
 ----
 
-image::deployment-8.png[second code insert]
+image::images/deployment-8.png[second code insert]
 
 Save the deployment config.
 

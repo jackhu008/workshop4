@@ -95,7 +95,7 @@ oc get inmemorychannel
 
 You should see a screenshot like the one below
 
-image::camekknative-4.png[InMemory Channels Ready]
+image::images/camekknative-4.png[InMemory Channels Ready]
 
 You are looking for 'READY' to be 'True'
 
@@ -107,7 +107,7 @@ Now that we have deployed 2 message channels, we will deploy 3 Camel K Integrati
 
 The flow looks like:
 
-image::knative-eventing.png[align="center"]
+image::images/knative-eventing.png[align="center"]
 
 ****
 
@@ -126,19 +126,19 @@ Go to Workloads/Pods. As you are using a single namespace for the workshop this 
 
 Watch as the integrations are created using builder and deployment containers. This may take a little while. Your screen with eventually look simlar to the one below.
 
-image::camekknative-11.png[Containers building]
+image::images/camekknative-11.png[Containers building]
 
 TIP: The screenshot above shows you pods in all their states e.g. completed, running, terminated etc. To just view the running pods, click on "filter" (top left hand side of the table listing the pods) and check the box "running"
 
 Once it has finished deploying the integrations you will have three Pods active as shown similar to the screenshot below (ignore the devex Pod, this is your terminal Pod)
 
-image::camekknative-12.png[Containers Complete]
+image::images/camekknative-12.png[Containers Complete]
 
 Now go to the developer view in the OpenShift Console
 
 Now that all 3 of the Integrations are deployed, the topology view should look like the screenshot below
 
-image::camekknative-5.png[Integrations running]
+image::images/camekknative-5.png[Integrations running]
 
 TIP: The Knative service is represented  by the name "KSVC" and "REV". You should see 2 of these in the topology view. On each of the Knative Services you will see the Knative "K" logo just to the left of the letters "KSVC". You definitely know that you have a Knative service now.  "KSVC" is the Knative Service defined to OpenShift. The artefact called "REV", is the Knative revision that is current running. Revisions can be used to implement a Canary Release strategy. The diagram shows that 100% of the traffic is routed to the revision shown on the topology view. If you click on one of the "KSVC" on the topology view you will see an option to set the traffic distribution
 
@@ -146,7 +146,7 @@ Each of the integrations is producing log information.
 
 Lets view the logs of each of the running integrations. To view a log, simple click inside any of the square boxes. You should see a screen similar to the one below.
 
-image::camekknative-6.png[Viewing overview of running Integration]
+image::images/camekknative-6.png[Viewing overview of running Integration]
 
 Click on "View Logs" to see the log for the integration
 
@@ -268,13 +268,13 @@ kamel delete feed
 
 Go back to the topology view, you will notice that the feed integration has gone. 
 
-image::camekknative-13.png[No Feed]
+image::images/camekknative-13.png[No Feed]
 
 Show some patience now, keep looking at the topology view, we are waiting (and hoping!) that the integrations scale down to zero.
 
 You will know when this starts as the rings around the circles will change from the normal blue to a very dark blue, before going white. Once they are white, the integrations are scaled to zero just like the screenshot below
 
-image::camekknative-10.png[Scaled to zero]
+image::images/camekknative-10.png[Scaled to zero]
 
 To wake the Integrations up again, redeploy the 'feed' integration.
 
@@ -344,11 +344,11 @@ In the OpenShift console, make sure you in developer view looking at your sandbo
 
 This should look similar to the screenshot below 
 
-image::camekknative-14.png[Developer Console]
+image::images/camekknative-14.png[Developer Console]
 
 Click on "+Add"
 
-image::camekknative-15.png[Add]
+image::images/camekknative-15.png[Add]
 
 You will see "From Catalog" on the screenshot above, 'click' on it 
 
@@ -360,7 +360,7 @@ In that text box, type "kafka"
 
 You should see a screenshot similar to the one below
 
-image::camekknative-16.png[Kafka in Catalog]
+image::images/camekknative-16.png[Kafka in Catalog]
 
 'Click' on Kafka
 
@@ -368,7 +368,7 @@ image::camekknative-16.png[Kafka in Catalog]
 
 You will now be presented with a sample Kafka yaml file that looks similar to the screenshot below 
 
-image::camekknative-17.png[Sample Kafka yaml]
+image::images/camekknative-17.png[Sample Kafka yaml]
 
 Due to the number of workshop attendees and the size of the OpenShift cluster we need to make the Kafka deployment smaller by reducing the number of Kafka Brokers in the cluster to 1, and the number of zookeeper instances to 1. 
 
@@ -433,7 +433,7 @@ Press 'Create'.
 
 You will be presented with a screen that looks similar to the screenshot below. (This is looking at the AMQ Streams operator)
 
-image::camekknative-18.png[AMQ Streams Operator]
+image::images/camekknative-18.png[AMQ Streams Operator]
 
 If you click on "my-cluster", you can see the current state of the Kafka deployment by scrolling to the bottom of the screen
 
@@ -444,11 +444,11 @@ Ready      True
 
 It should like the screenshot below 
 
-image::camekknative-19.png[AMQ Streams Status]
+image::images/camekknative-19.png[AMQ Streams Status]
 
 You can also go back to the Developer view in the console. You will see the Zookeeper and Kafka Brokers starting up. Once everything is started it should look similar to the screenshot below.
 
-image::camekknative-20.png[AMQ Streams Topology View]
+image::images/camekknative-20.png[AMQ Streams Topology View]
 
 ==== Install Knative Kafka Eventing
 
@@ -739,7 +739,7 @@ words      True             http://words-kn-channel.sandbox30.svc.cluster.local 
 
 We are now going to re-run exactly the same integrations that we used earlier in the lab, as a reminder, this is what the flow looks like
 
-image::knative-eventing.png[align="center"]
+image::images/knative-eventing.png[align="center"]
 
 Make sure you are in the "Topology view" within the OpenShift console so you can see things deploy and run. 
 

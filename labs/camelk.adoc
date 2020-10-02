@@ -85,7 +85,7 @@ ls
 
 You should see an output similar to the one shown below:
 
-image::camelk-2.png[Camel K file list]
+image::images/camelk-2.png[Camel K file list]
 
 === Deploy a Camel K Integration
 
@@ -104,7 +104,7 @@ Click on 'Project'
 
 If your screen is wide enough the Activity pane will appear on the right hand side. If not, scroll down to the 'Activity' pane - this shows the events and actions currently occuring within the project. It will look similar to this:
 
-image::camelk-2a.png[Deploying Camel K activity]
+image::images/camelk-2a.png[Deploying Camel K activity]
 
 Switch back to the project Topology view by clicking on 'Topology'
 
@@ -114,7 +114,7 @@ Click on 'Simple' (this is your integration), and you can see what’s going on.
 
 Once the pod has a dark blue ring around it, it is running, as per the screenshot below. The devex4 application is your terminal application and can be ignored for the duration of this chapter
 
-image::camelk-3.png[Running Integration]
+image::images/camelk-3.png[Running Integration]
 
 If you haven't already, click 'inside the circle' to open the overview window
 
@@ -124,7 +124,7 @@ There will be one Pod running with a name similar to simple-xxxxxxx-yyyyy (rando
 
 The output of the log should look as shown below:
 
-image::camelk-4.png[Integration logs]
+image::images/camelk-4.png[Integration logs]
 
 The integration is a simple timer that triggers every 1 second and writes to the log file.
 
@@ -183,7 +183,7 @@ If you are quick enough (you need to be really quick) switch back to the OpenShi
 
 Look at the log file again (as above) to make sure the change has been deployed
 
-image::camelk-4a.png[New output]
+image::images/camelk-4a.png[New output]
 
 === Deploy Camel K in Developer mode
 
@@ -216,7 +216,7 @@ kamel run simple.groovy --dev
 
 You will see the deployment phases logged on the screen, followed by the log outputting automatically from the integration pod, useful for a developer to see what’s going on. The output should look similar to the screenshot below
 
-image::camelk-5.png[Developer Mode]
+image::images/camelk-5.png[Developer Mode]
 
 NOTE: For the next exercise, you will need 2 terminal windows. Go to the OpenShift Console, which should be on the Developer view. Click on Topology if the Topology window is not currently in focus. Click on the URL icon at the top right of the 'Devex4' application as you did to originally open the terminal. This will open another Terminal for you to use.
 

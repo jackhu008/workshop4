@@ -4,7 +4,7 @@ Author: Mark Roberts (feedback to mroberts@redhat.com)
 
 During the development process a number of container images will be produced. The source-2-image capability described in the basic workshop creates images catalogued under an image stream within a project. Other container images may be created using command line functions such as docker or buildah (both using docker files potentially) or images may be downloaded from the Red Hat Container Catalogue https://catalog.redhat.com/software/containers/explore[here, window="_blank"], or other vendor supplied images may be used. From a variety of sources and through a variety of mechanisms images will be created that form the microservices of an application. Such images need to be managed through a lifecycle as they progress from Development to QA and finally to production in a process described in the diagram below. The purpose of Red Hat Quay is to provide a repository for the secure and structured storage of images that may be accessed by multiple users from multiple clusters. Quay also provides an image vulnerability scanning capability to identify issues with images stored within it.
 
-image::quay-1.png[Image management process through the route to live]
+image::images/quay-1.png[Image management process through the route to live]
 
 .Note on the workshop
 ****
@@ -15,7 +15,7 @@ The terminal that we use for the workshops cannot be used for the Buildah comman
 
 The image below shows an OpenShift project and the various artifacts that are created. The image stream object is shown here within the context of the builder process that creates it and the running pod that consumes it.
 
-image::quay-2.png[Openshift project and the creation of the image stream]
+image::images/quay-2.png[Openshift project and the creation of the image stream]
 
 .The structure of Quay
 ****
@@ -77,14 +77,14 @@ The image repository field will show the route to use to get access to the conta
 
 Login to quay.io using the credentials provided when you registered and you will see an empty environment similar to that whic is shown below.
 
-image::quay-3.png[Quay web user interface]
+image::images/quay-3.png[Quay web user interface]
 
 .Quay permissions
 ****
 
 The diagram below shows the permission structure for an organization.
 
-image::quay-4.png[Quay organization permissions]
+image::images/quay-4.png[Quay organization permissions]
 
 . Teams contain users and robot (automation) users who have permissions on specific repositories.
 . Teams can have a role of 'Creator' - Create new repositories which will inherit the organization default permissions)or 'Admin' - perform all actions including delete, or 'member' - permission is indicated by each repository.
@@ -99,7 +99,7 @@ Give the organization a name of 'workshop{{USER_ID}}'.. Provide an email address
 
 You will then be taken to the organization and the screen will show the repositories (currently empty), as shown below. Other options down the left hand side of the screen cover teams and members, robot accounts, default permissions, usage logs, applications and settings.
 
-image::quay-5.png[Quay organization permissions]
+image::images/quay-5.png[Quay organization permissions]
 
 Click on the '+ Create New Repository' link at the top right of the screen.
 
@@ -163,9 +163,9 @@ A number of tools exist for the management of images, three of which are describ
 [grid=none]
 [frame=none]
 |===
-a| image::buildah.png[] |   Buildah is an image building open source project that can either use Buildah specific commands to build an image or it can simply use an existing docker file. One major advantage of Buildah for some users is that it does not require a docker process to be constantly running on the workstation as root. In the workshop Buildah will be used to get images from / to OpenShift and from / to Quay.
-a| image::podman.png[] |   Podman overlaps somewhat with Buildah but its main focus is with regard to the running and interaction with container images.
-a| image::skopeo.png[] |   Skopeo can be used to copy container images from one image repository to another. It can also be used to convert images between formats. It is possible to perform many of the actions in this workshop with Skopeo but by using Buildah it is possible to see what is being created in an intermediate local repository which may add some value for users.
+a| image::images/buildah.png[] |   Buildah is an image building open source project that can either use Buildah specific commands to build an image or it can simply use an existing docker file. One major advantage of Buildah for some users is that it does not require a docker process to be constantly running on the workstation as root. In the workshop Buildah will be used to get images from / to OpenShift and from / to Quay.
+a| image::images/podman.png[] |   Podman overlaps somewhat with Buildah but its main focus is with regard to the running and interaction with container images.
+a| image::images/skopeo.png[] |   Skopeo can be used to copy container images from one image repository to another. It can also be used to convert images between formats. It is possible to perform many of the actions in this workshop with Skopeo but by using Buildah it is possible to see what is being created in an intermediate local repository which may add some value for users.
 |===
 ****
 

@@ -48,7 +48,7 @@ NOTE: Devfiles are YAML files that are consumed and transformed into a cloud wor
 Hit the `Load devfile` button to ensure that the configuration is loaded.
 
 
-image::quarkus-1.png[View of interface with populated workspace name and imported devfile]
+image::images/quarkus-1.png[View of interface with populated workspace name and imported devfile]
 
 
 Scroll to the bottom of the page. Click `Create and Open`. After a minute or two, you will be placed in the workspace.
@@ -62,14 +62,14 @@ TIP: If things get weird, you can simply reload the browser tab to refresh the v
 In this step, you will create a straightforward application serving a `hello` endpoint. To demonstrate dependency injection, this endpoint uses a `greeting` bean.
 
 
-image::quarkus-2.png[Restful greeting service process]
+image::images/quarkus-2.png[Restful greeting service process]
 ****
 
 
 You can see icons on the left for navigating between project explorer, search and other plugins. You’ll use these during the course of this workshop. Feel free to click on them and see what they do:
 
 
-image::quarkus-3.png[Workspace icons on the left pane]
+image::images/quarkus-3.png[Workspace icons on the left pane]
 
 
 Many features of CodeReady Workspaces are accessed via Commands. You can see a few of the commands listed with links on the home page (e.g. New File.., Git Clone.., and others).
@@ -89,7 +89,7 @@ What you will discover in this section includes:
 Click on the project explorer icon on the left panel. Navigate to `quarkus-lab` → `getting-started` → `src` → `main` → `java` → `org.acme.rest` in the project tree and double click on `GreetingResource.java`:
 
 
-image::quarkus-4.png[GreetingResource.java location]
+image::images/quarkus-4.png[GreetingResource.java location]
 
 
 This class has a very simple RESTful endpoint definition:
@@ -123,7 +123,7 @@ Start the app by clicking on Start Live Coding in quarkus-tools:
 TIP: You only need to click the button once.
 
 
-image::quarkus-5.png[Selection of Live Coding Button]
+image::images/quarkus-5.png[Selection of Live Coding Button]
 
 
 This will compile and run the app using `mvn compile quarkus:dev` in a Terminal window. Leave this terminal window open throughout the lab! You will complete the entire lab without shutting down Quarkus Live Coding mode, so be careful not to close the tab (if you do, you re-run it). This is very useful for quick experimentation.
@@ -144,7 +144,7 @@ CodeReady will also detect that the Quarkus app opens port `5005` (for debugging
 TIP: Close all pop-up dialog boxes that appear on the bottom right of your screen.
 
 
-image::quarkus-6.png[Dialog box for port 8080]
+image::images/quarkus-6.png[Dialog box for port 8080]
 
 
 You should see the default Quarkus welcome page on the right-hand side of your workspace (you may need to click the reload icon).
@@ -152,7 +152,7 @@ You should see the default Quarkus welcome page on the right-hand side of your w
 Open a new CodeReady Workspaces Terminal:
 
 
-image::quarkus-7.png[Selection of New Nerminal button]
+image::images/quarkus-7.png[Selection of New Nerminal button]
 
 
 and invoke the hello endpoint using the following curl command:
@@ -166,7 +166,7 @@ You can also click on the URL link labelled `web-development` - located in quark
 
 Add `/hello` to the URL in your browser to see the same result as the curl command.
 
-image::quarkus-8.png[Hello endpoint in browser]
+image::images/quarkus-8.png[Hello endpoint in browser]
 
 
 Now, let’s exercise the live reload capabilities of Quarkus. In CodeReady, open the `GreetingResource.java` file (in `src/main/java/org/acme/rest`) remove the line `return "hello";` in the editor. Now insert the line `“return hola";`. 
@@ -224,7 +224,7 @@ Click on `Package Application` in quarkus-tools.
 This produces an executable jar file in the `quarkus-lab` → `getting-started` → `target` directory:
 
 
-image::quarkus-9.png[Produced .jar file in /target directory]
+image::images/quarkus-9.png[Produced .jar file in /target directory]
 
 
 `getting-started-1.0.0-SNAPSHOT-runner.jar` - being an executable jar. Be aware that it’s not an über-jar as the dependencies are copied into the `target/lib` directory.
@@ -354,7 +354,7 @@ This will cause our new `GreetingResource` class to be instantiated and injected
 You will get red error squigglies when you paste this code due to missing import statements:
 
 
-image::quarkus-10.png[Added method to GreetingResource.java with missing imports]
+image::images/quarkus-10.png[Added method to GreetingResource.java with missing imports]
 
 
 Add the necessary imports below the existing import statements near the top of the file, where the other existing imports are:
@@ -607,13 +607,13 @@ Using the UI, expand the `/hello/greeting/{name}` endpoint. Here you can basic d
 Click the `Try it out` button to expand the box allowing you to try it. Enter any openshift into the name field and click Execute:
 
 
-image::quarkus-11.png[Name input in Swagger UI]
+image::images/quarkus-11.png[Name input in Swagger UI]
 
 
 This accesses the endpoint in the same way that `curl` does, and shows you the result (along with corresponding metadata in the HTTP response):
 
 
-image::quarkus-12.png[Name response in Swagger UI]
+image::images/quarkus-12.png[Name response in Swagger UI]
 
 
 Pretty handy way to test out your APIs!

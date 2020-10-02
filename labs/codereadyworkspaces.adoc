@@ -56,7 +56,7 @@ Authenticate with your user id and password of 'openshift'.
 
 If an authorization access page is displayed press the button labelled 'Allow selected permissions' and you will then see a user registration page similar to that which is shown below.
 
-image::codeready-workspaces-01.png[CodeReady Workspaces account information]
+image::images/codeready-workspaces-01.png[CodeReady Workspaces account information]
 
 Enter {{USER_ID}} for the user name, enter an email address, first and last names and hit submit.
 
@@ -68,7 +68,7 @@ As stated above workspaces can be created in a number of different ways and for 
 
 After logging into CodeReady Workspaces for the first time you will see a getting started screen as shown below :
 
-image::codeready-workspaces-02.png[CodeReady Workspaces getting started]
+image::images/codeready-workspaces-02.png[CodeReady Workspaces getting started]
 
 This screen allows you to create a new workspace by selecting a technology stack. This will result in a specific container image being selected to create your workspace. Feel free to experiment with the different stacks later but for now select the option 'Workspaces' on the left hand side menu and then select the blue 'Add Workspace' button. 
 
@@ -86,17 +86,17 @@ If you do not have a project that is suitable then please clone the project from
 
 The Projects listed in the project should now show something similar to that which is shown below depending on the project that you selected from Github.
 
-image::codeready-workspaces-03.png[Creating a workspace]
+image::images/codeready-workspaces-03.png[Creating a workspace]
 
 Press the green button 'Save' and then press the green button 'Apply' to restart the workspace.
 
 When you see a pop up that states the workspace has been updated click on the workspace name on the left hand side. This will launch the workspace as shown below.
 
-image::codeready-workspaces-04.png[Workspace creating]
+image::images/codeready-workspaces-04.png[Workspace creating]
 
 When the workspace has been started it will show as below :
 
-image::codeready-workspaces-05.png[Workspace]
+image::images/codeready-workspaces-05.png[Workspace]
 
 Note that the yellow rectangle with a white arrow is used to switch between workspace management functions (as shown above) and simple edit functions from within the workspace. Press the yellow button and you will see the additional menu appear or disappear as required. Without the display of the workspace management functions the left hand side of the display shows four main functions accessible from the buttons which are file management, search, source control and debug.
 
@@ -114,7 +114,7 @@ Close the preferences window.
 
 Next you need to generate an ssh key that can be stored within your Github account. From the top level menu in the workspace select view and then 'Find a command', or press F1. This will result in a list of commands being displayed at the top of the screen as shown below :
 
-image::codeready-workspaces-06.png[Command execution in workspace]
+image::images/codeready-workspaces-06.png[Command execution in workspace]
 
 In the command selection field type 'generate' and then select the option 'SSH: generate key pair for particular host...'
 
@@ -124,7 +124,7 @@ On the bottom right corner of the workspace you should get a pop up message. Pre
 
 Go to Github, sign in and then select the personal settings for your account. Then select 'SSH and GPG keys'. Press the green 'New SSH key' button and then paste the key. Give the key a title (such as Red Hat CRW) and press the green 'Add SSH key' button. Authenticate with Github and you should have a new key added similar to that which is shown below:
 
-image::codeready-workspaces-07.png[Github SSH key addition]
+image::images/codeready-workspaces-07.png[Github SSH key addition]
 
 ==== Edit and push to Github.com
 
@@ -138,7 +138,7 @@ Enter a comment in the field above the file name and then press the tick symbol 
 
 The bottom left corner of the workspace will then show that there is a pending commit to be pushed to the Git repository on github.com as shown below:
 
-image::codeready-workspaces-08.png[Source control push required indication]
+image::images/codeready-workspaces-08.png[Source control push required indication]
 
 Mouse click on this message and you will see a pop up warning that you are about to push changes to the Git repository on github.com. Press OK to proceed.
 
@@ -152,7 +152,7 @@ Press Save and then press Apply which will cause a restart of the workspace. On 
 
 The left hand side of the workspace will now have two new icons as shown below. 
 
-image::codeready-workspaces-09.png[OpenShift plugin]
+image::images/codeready-workspaces-09.png[OpenShift plugin]
 
 ==== Using the OpenShift plugin to create an application
 
@@ -180,11 +180,11 @@ For the Node JS version select latest.
 
 If you open up the tree structure under the crw-project-{{USER_ID}} node you should see an application similar to that which is shown below.
 
-image::codeready-workspaces-10.png[Application created by CodeReady Workspaces]
+image::images/codeready-workspaces-10.png[Application created by CodeReady Workspaces]
 
 Right click on the lowest node (with @not pushed) on the right hand side and select 'Push'. This will use the OpenShift DO capability to push the configuration for the application to OpenShift where the Source-2-Image build process will be used to build the application. At the bottom of the screen a window will appear as shown below to display the progress of the creation of the application and any errors that may result.
 
-image::codeready-workspaces-11.png[Application push progress]
+image::images/codeready-workspaces-11.png[Application push progress]
 
 When the operation has completed you will get a message stating "Changes successfully pushed to component". 
 
@@ -206,7 +206,7 @@ Back in CodeReady Workspaces click on the file browser on the left hand side and
 
 Each plugin that exists within the workspace has a terminal application which given the names of some of the plugins can make it a little difficult to spot the terminal that you need. For general OpenShift command line access use the terminal that appears as an option under the name vscode-openshift-connectorxxx from the right hand side context menu. This menu is reached by clicking on the cube symbol on the right than side of the workspace and then opening the plugins folder as shown below :
 
-image::codeready-workspaces-12.png[Accessing the terminal from CRW]
+image::images/codeready-workspaces-12.png[Accessing the terminal from CRW]
 
 This will create a new terminal window at the bottom of the screen from which you can perform all the usual oc command line operations and the odo command line operations which are described in detail in a specific lab of the innovation workshop.
 
@@ -216,7 +216,7 @@ In order to make a workspace configuration available to a wider group of develop
 
 Press the yellow button on the top left corner of the workspace to view the pop out menu on the left hand side and select the workspaces option. Select the workspace by name to view the details of the workspace and then select the Devfile option as shown below :
 
-image::codeready-workspaces-13.png[Workspace Devfile]
+image::images/codeready-workspaces-13.png[Workspace Devfile]
 
 The Devfile content could then easily be copied for sharing with teh rest of your development team. The best way to do this (not performed in the workshop) is to store the contents of the Devfile in a yaml file in the root of a github project. in this manner the file may be version controlled and released to the team as required to make changes to the development environments. 
 

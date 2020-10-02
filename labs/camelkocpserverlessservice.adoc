@@ -92,7 +92,7 @@ NOTE: If this is the first time you've deployed a Camel K integration, it will t
 
 Once, the Integration is deployed, the topology view should look like the screnshot below
 
-image::camekknativeserving-1.png[Integrations running]
+image::images/camekknativeserving-1.png[Integrations running]
 
 Camel K has detected that OpenShift Serverless is installed and automatically deployed the integration as a Knative serving (because it's API based) service.
 
@@ -100,23 +100,23 @@ TIP:: The next set of instructions will only be possible if Knative Serving hasn
 
 To view the logs for the integration, click any where inside the "dotted lines"
 
-image::camekknativeserving-2.png[Viewing overview of running Integration]
+image::images/camekknativeserving-2.png[Viewing overview of running Integration]
 
 Click on 'View Logs'
 
 You should see a screen similar to the one below
 
-image::camekknativeserving-3.png[Running Pod]
+image::images/camekknativeserving-3.png[Running Pod]
 
 Click on the row name e.g. greetings-xxxxxxxxxxxx
 
 This should show you a screen similar to the one below
 
-image::camekknativeserving-4.png[Pod Details]
+image::images/camekknativeserving-4.png[Pod Details]
 
 Click on 'Logs' to view the log for the pod. It should look something like the one below
 
-image::camekknativeserving-5.png[Pod Details]
+image::images/camekknativeserving-5.png[Pod Details]
 
 === Knative in action
 
@@ -124,7 +124,7 @@ Following the steps above, you might find that the pod you are looking for is no
 
 With the OpenShift console switch to developer view, viewing the toplogy. Your screen might look like the one below. If it doesn't, wait for up to 30 seconds and it scale down to zero. By default, Knative scales down an inactive pod after 30 seconds.  
 
-image::camekknativeserving-6.png[Knative serving]
+image::images/camekknativeserving-6.png[Knative serving]
 
 Next we are going to make a call to the greetings API. To do this, you need to find out the name of http route.
 To do this, in the terminal window, type in the following command
@@ -136,7 +136,7 @@ oc get service.serving.knative.dev
 
 You should see something similar to the picture below
 
-image::camekknativeserving-8.png[Knative serving]
+image::images/camekknativeserving-8.png[Knative serving]
 
 In the terminal window type (make sure you substitute the URL you see from running the command above). Note we are adding the /camel/greetings/YOURNAMEHERE bit to the URL
 
@@ -147,7 +147,7 @@ curl -m 60 URLFROMABOVE/camel/greetings/YOURNAMEHERE
 
 After a few seconds you should get a response, and the topology view should now look similar to the picture below. The dark blue circle indicates that the service is now executing.
 
-image::camekknativeserving-7.png[Knative serving started]
+image::images/camekknativeserving-7.png[Knative serving started]
 
 Knative has automatically scaled the service to one pod, and processed the curl request.
 
@@ -220,7 +220,7 @@ For information, in the console, if you switch to Administrator view you can see
 
 In the OpenShift Console select the Administrator View using the top level selector, then Serverless/Revisions
 
-image::camekknativeserving-9.png[Knative serving revisions]
+image::images/camekknativeserving-9.png[Knative serving revisions]
 
 Now select Serverless/Services
 
@@ -232,20 +232,20 @@ Switch back to the developer view, looking at the topology.
 
 It probably looks similar to the one below (without the arrow). 
 
-image::camekknativeserving-10.png[Topology view]
+image::images/camekknativeserving-10.png[Topology view]
 
 Click on *KSVC greetings*
 
 This should open a panel on the right hand side that shows both revisions with 100% traffic distribution going to the first revision in the list. As per the screenshot below
 
-image::camekknativeserving-11.png[Revision view]
+image::images/camekknativeserving-11.png[Revision view]
 
 Click on *Set Traffic Distribution*
 Click on *Add Revision*
 
 Select the other revision from the selection box as per the screenshot below
 
-image::camekknativeserving-12.png[Revision Routing split]
+image::images/camekknativeserving-12.png[Revision Routing split]
 
 Now, change the routing percentage split between the 2 revisions and add a tag to each revision. 
 
@@ -253,7 +253,7 @@ The tag is used by the Knative service to perform the routing.
 
 Your configuration should look similar to the screenshot below
 
-image::camekknativeserving-13.png[Change Routing split]
+image::images/camekknativeserving-13.png[Change Routing split]
 
 ==== Using the Knative cli
 
@@ -312,7 +312,7 @@ For information, in the console, if you switch to Administrator view you can see
 
 Administrator View --> Serverless --> Revisions
 
-image::camekknativeserving-9.png[Knative serving revisions]
+image::images/camekknativeserving-9.png[Knative serving revisions]
 
 If you look at 
 

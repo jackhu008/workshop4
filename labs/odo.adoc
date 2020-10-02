@@ -15,13 +15,13 @@ The principle of the odo command is that it can very quickly create a new projec
 The diagram below shows how the odo command can fit into a development cycle. The outline diagram shows that the odo command is appropriate for single developers working with a degree of isolation, the team development involves multiple developers integrating their code through a GIT repository and the final phase involves the use of multiple clusters for the deployment of applications through to production.
 ****
 
-image::odo-1.png[odo in the development cycle]
+image::images/odo-1.png[odo in the development cycle]
 
 ****
 In more detail the diagram below shows how odo and oc / source-2-image work together to create a scaled development experience. In the single user phase the odo command is used to push the application code to a container in OpenShift. In the light blue box the source code is pushed to OpenShift in which the language specific builder image is used to create a new image containing the built code. This  image is started to create a running container. When the developer needs to share the code with the work of others GIT is used as a vehicle for integration and to remove any code conflicts.  This is the medium blue box in which the code is pushed to GIT and the OpenShift source-2-image capability is used to build a new running container. In the final phase shown in the darker blue box, the built container image can then be pushed to the Quay image repository to be stored securely ready for deployment to further environments such as pre-production and production.
 ****
 
-image::odo-2.png[odo in the development cycle - detail]
+image::images/odo-2.png[odo in the development cycle - detail]
  
 === Installing
 
@@ -155,7 +155,7 @@ odo push
 
 The output from the above command is shown below
 
-image::odo-3.png[odo in the development cycle - detail]
+image::images/odo-3.png[odo in the development cycle - detail]
 
 Wait for the response "Changes successfully pushed to component"
 

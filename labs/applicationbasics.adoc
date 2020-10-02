@@ -31,7 +31,7 @@ the project and the objects within.*
 
 In the top left of the UI, where the label indicates the view mode, change the mode from Administrator to Developer
 
-image::applicationbasics-2.png[Developer Context]
+image::images/applicationbasics-2.png[Developer Context]
 
 Click 'Add'
 
@@ -54,14 +54,14 @@ Untick the filter that says 'Operator Backed'. This filter allows the developer 
 
 Enter ‘node’ in the 'filter by keyword' search box
 
-image::applicationbasics-1.png[Node Choice]
+image::images/applicationbasics-1.png[Node Choice]
 
 *OpenShift allows for multiple base images to be built upon - the selection of node searches for any images or templates registered into the system 
 with the label 'node'. In the screenshot above, and in the catalog you will be presented with, there will be a selection of base images.*
 
 Select ‘Node.js’
 
-image::applicationbasics-3.png[Node Choice]
+image::images/applicationbasics-3.png[Node Choice]
 
 *When you select an option, in this case the Node.js builder one, you are presented with a wizard that shows you exactly what 
 components will be created as part of your Project. In this case, with Node.js, the template will create a build config, that will build the 
@@ -106,7 +106,7 @@ Click 'Create'
 
 Click on the Icon marked 'Node'
 
-image::applicationbasics-4.png[Node Sidepanel]
+image::images/applicationbasics-4.png[Node Sidepanel]
 
 *The side-panel contains an overview of the Application you chose. In this case it will cover 
 the build. Once a build has completed this side panel shows the Pods that are running, the builds that have completed, the services 
@@ -114,7 +114,7 @@ exported for the Application and the routes, if the Application has any.*
 
 Wait for the Build to finish, the Pod to change from Container Creating to Running
 
-image::applicationbasics-4b.png[Node Sidepanel with App Running]
+image::images/applicationbasics-4b.png[Node Sidepanel with App Running]
 
 *When an Application is created the Pod ring will be empty, indicating that an Application will appear once the build has completed. When the build 
 completes the Pod ring will switch to light blue, indicating the Pod is being pulled (the image is being pulled from the registry to the Node where the 
@@ -164,7 +164,7 @@ Click on the forumstaticassets Pod
 
 Watch the build complete, the Container Creating and the Running event. During the build process you may see errors in the right panel; these are actually correct. The concept of a Deployment immediately tries to deploy the image of the application. In the case of a S2I build this image doesn't immediately exist, because the system has to build it, so the deployment tries to deploy until the build is finished, at which point the deployment will succeed. It is often better to use the OpenShift Deployment Config approach; deployments are there for Kubernetes compliance.
 
-image::applicationbasics-4c.png[Multi-app topology]
+image::images/applicationbasics-4c.png[Multi-app topology]
 
 Click 'Add'
 
@@ -198,7 +198,7 @@ Click on the ‘ocpnode’ Application in the topology - click on the image:expa
 
 *Now we have created a new Application grouping you will see two ''cloud'' groupings, labelled with the appropriate Application name you entered.*
 
-image::applicationbasics-4d.png[Multi-app topology]
+image::images/applicationbasics-4d.png[Multi-app topology]
 
 === Interacting with OpenShift through the Command Line
 
@@ -295,7 +295,7 @@ Note the metrics for the project
 
 Click on 'Workloads' on the left menu (not the project overview) and then select Pods to see the list of pods for the project as shown in the image below.
 
-image::applicationbasics-7.png[Command Line Tools]
+image::images/applicationbasics-7.png[Command Line Tools]
 
 It is possible to filter groups of pods that are displayed based on the headings of Running, Pending, Terminating etc. The classifications in dark blue are currently being displayed and those in grey are not being displayed. Click on the 'Completed' heading to switch on the display of completed pods (there should be five). Click on 'Running' to toggle the display of running pods off. Click on the appropriate headings again to switch off the display of completed pods and to switch back on the display of running pods.
 
@@ -305,7 +305,7 @@ Change to Developer mode and then select Topology if the Topology page isn’t a
 
 Hold down the shift button, click and hold on the forumstaticassets icon, and pull it out of the application grouping graphic. Release the hold on the forumstaticassets icon.
 
-image::applicationbasics-8.png[Moving app from group]
+image::images/applicationbasics-8.png[Moving app from group]
 
 *The UI will now prompt you if you wish to remove the application component. Select Remove. This component is now separated from the application group*
 
